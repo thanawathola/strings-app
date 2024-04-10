@@ -8,10 +8,10 @@ export default function Home() {
                 <h1>Strings</h1>
             </div>
             <div>
-                <Link href="/signin" className="bg-slate-900 my-4 p-3 rounded-lg block ">Sign In</Link>
+                <Link href="/signin" className="bg-slate-900 my-4 p-3 rounded-lg block text-center">Sign In</Link>
             </div>
             <div>
-                <Link href="/signup" className="bg-slate-900 my-4 p-3 rounded-lg block ">Sign Up</Link>
+                <Link href="/signup" className="bg-slate-900 my-4 p-3 rounded-lg block text-center ">Sign Up</Link>
             </div>
         </div>
     </main>
