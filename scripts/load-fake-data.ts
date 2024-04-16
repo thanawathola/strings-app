@@ -6,7 +6,7 @@ const projectDir =process.cwd();
 loadEnvConfig(projectDir);
 
 async function loadFakeData (numUsers: number = 10 ) {
-    console.log(`executing load fake data .generating ${numUsers} users`);
+    console.log(`executing load fake data .generating ${numUsers} users.`);
 
     const client = new Client({
         user: process.env.POSTGRES_USER,
