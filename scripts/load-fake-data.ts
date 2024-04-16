@@ -15,9 +15,11 @@ async function loadFakeData (numUsers: number = 10 ) {
         password: process.env.POSTGRES_PASSWORD,
         port: parseInt(process.env.POSTGRES_PORT!),
     });
+    await client.connect();
 
     const res = await client.query("select 1")
     console.log(res);
+    await client.end();
 }
 
 loadFakeData ();
