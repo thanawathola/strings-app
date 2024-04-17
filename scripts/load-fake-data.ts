@@ -1,6 +1,5 @@
-import { loadEnvConfig } from '@next/env';
 import { Client } from "pg";
-
+import { loadEnvConfig } from '@next/env';
 
 const projectDir =process.cwd();
 loadEnvConfig(projectDir);
@@ -17,9 +16,9 @@ async function loadFakeData (numUsers: number = 10 ) {
     });
     await client.connect();
 
-    const res = await client.query("select 1")
+    const res = await client.query("select 1");
     console.log(res);
     await client.end();
 }
 
-loadFakeData ();
+loadFakeData  ();
