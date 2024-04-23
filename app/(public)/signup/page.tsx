@@ -1,9 +1,9 @@
-import Form from "./form"
+import Form from "./form";
 
 export default async function SignUp () {
     return (
         <div>
             <Form/>
         </div>
-    )
+    );
 }
