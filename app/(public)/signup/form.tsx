@@ -2,11 +2,9 @@
 import React, { FormEvent, useState } from "react";
 
 function Form() {
-  const [username, setUserName] = useState<undefined | string>("");
-  const [password, setPassword] = useState<undefined | string>("");
-  const [confirmPassword, setConfirmPassword] = useState<undefined | string>(
-    ""
-  );
+  const [username, setUserName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
 
   const [errors, setErrors] = useState<string[]>([]);
 
