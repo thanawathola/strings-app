@@ -23,6 +23,9 @@ function Form() {
       method: "post",
       body: JSON.stringify({ username: username, password: password }),
     });
+
+    const result = await res.json();
+    result
     if (res.ok) {
       window.location.href = "/signin";
     } else {
