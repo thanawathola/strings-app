@@ -6,8 +6,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const page =
     (searchParams.get("page") && parseInt(searchParams.get("page")!)) || 0;
-  const limit = 10;
-  const offset = page * 10;
+  const limit = 3;
+  const offset = page * 3;
   const jwtPayLoad = await getJWTPayload();
 
   const res = await sql(
