@@ -11,7 +11,7 @@ function FeedList({ index }: { index: number }) {
     <ul>
       {data.data.map((post: PostI, i: number) => {
         return (
-          <li key={post.id} className="my -5">
+          <li key={post.id} className="my-5">
             <Post post={post} />
           </li>
         );
