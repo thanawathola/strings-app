@@ -8,8 +8,8 @@ export async function GET(request: Request) {
   const username = searchParams.get("username");
   const page =
     (searchParams.get("page") && parseInt(searchParams.get("page")!)) || 0;
-  const limit = 2;
-  const offset = page * 2;
+  const limit = 3;
+  const offset = page * 3;
 
   const statement = `select p.*, u.avatar, u.username
     from posts p inner join users u
@@ -17,7 +17,15 @@ export async function GET(request: Request) {
     order by created_at desc limit $2 offset $3`;
 
   if (username) {
-    // TODO
+    const userRes = await sql("select * from users where username = $1", [
+      username,
+    ]);
+    if (userRes.rowCount == 0) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
+    }
+    const user = userRes.rows[0];
+    const postsRes = await sql(statement, [user.id, limit, offset]);
+    return NextResponse.json({ data: postsRes.rows });
   }
 
   const res = await sql(statement, [jwtPayload.sub, limit, offset]);

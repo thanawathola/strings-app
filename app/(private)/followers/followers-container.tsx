@@ -7,12 +7,12 @@ function FollowersContainer() {
 
   const pages = [];
   for (let i = 0; i < cnt; i++) {
-    pages.push(<FollowersList index={i} />);
+    pages.push(<FollowersList key={i} index={i} />);
   }
 
   return (
     <div>
-        {pages}
+      {pages}
       <div className="flex justify-center w-full">
         <button
           onClick={() => setCnt(cnt + 1)}
