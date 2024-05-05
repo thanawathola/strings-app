@@ -1,4 +1,4 @@
-import User from "@/app/components/user";
+import User from "@/components/user";
 import useSWR from "swr";
 
 function FollowersList({ index }: { index: number }) {

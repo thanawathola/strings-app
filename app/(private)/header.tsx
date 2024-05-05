@@ -1,6 +1,6 @@
 "use client";
 import useSWR from "swr";
-import User from "../components/user";
+import User from "../../components/user";
 
 export default function Header() {
   const { data, error, isLoading } = useSWR("/api/users/profile");

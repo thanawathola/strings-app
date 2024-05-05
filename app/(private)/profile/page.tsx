@@ -1,7 +1,7 @@
 "use client";
 import useSWR from "swr";
 import Form from "./form";
-import PostContainer from "@/app/components/post-container";
+import PostContainer from "@/components/post-container";
 
 export default function Profile () {
     const {data ,error ,isLoading } = useSWR("/api/users/profile")

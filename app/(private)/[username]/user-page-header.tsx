@@ -1,6 +1,11 @@
+import { notFound } from "next/navigation";
 import useSWR, { mutate } from "swr";
 
-export default function UserPageHeader({ username }: { username: string }) {
+type Props = {
+  username: string;
+};
+
+export default function UserPageHeader({ username }: Props) {
   const {
     data: dataUser,
     error: errorUser,
@@ -17,6 +22,10 @@ export default function UserPageHeader({ username }: { username: string }) {
   if (isLoadingFollow || isLoadingUser) return <div>loading ...</div>;
 
   console.log(dataUser, dataFollow);
+
+  if (dataUser.data.length == 0) {
+    notFound();
+  }
 
   const user = dataUser.data[0];
 
@@ -42,10 +51,17 @@ export default function UserPageHeader({ username }: { username: string }) {
     <header className="w-full bg-slate-800 p-2 rounded-lg flex flex-row justify-between">
       <h1 className="text-lg font-bold">{username}</h1>
       {dataFollow.data.length > 0 && (
-        <button onClick={handleUnfollow} className="bg-slate-900 p-2 rounded-lg">Unfollow</button>
+        <button
+          onClick={handleUnfollow}
+          className="bg-slate-900 p-2 rounded-lg"
+        >
+          Unfollow
+        </button>
       )}
       {dataFollow.data.length == 0 && (
-        <button onClick={handleFollow} className="bg-slate-900 p-2 rounded-lg">Follow</button>
+        <button onClick={handleFollow} className="bg-slate-900 p-2 rounded-lg">
+          Follow
+        </button>
       )}
     </header>
   );

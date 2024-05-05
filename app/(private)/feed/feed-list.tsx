@@ -1,4 +1,4 @@
-import Post from "@/app/components/post";
+import Post from "@/components/post";
 import useSWR from "swr";
 
 function FeedList({ index }: { index: number }) {
