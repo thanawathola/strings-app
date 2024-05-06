@@ -12,7 +12,7 @@ export default function UserPage({ params }: Props) {
   return (
     <div>
       <UserPageHeader username={params.username} />
-      <PostContainer username={params.username} />
+      <PostContainer username={params.username}  />
     </div>
   );
 }
