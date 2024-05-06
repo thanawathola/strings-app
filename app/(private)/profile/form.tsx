@@ -8,8 +8,8 @@ function Form() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    const res = await fetch("/api/posts", {
-      method: "post",
+    const res = await fetch("/api/posts/", {
+      method: "POST",
       body: JSON.stringify({ content: post }),
     });
 
