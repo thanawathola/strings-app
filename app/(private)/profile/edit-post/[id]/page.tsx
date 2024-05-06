@@ -1,6 +1,7 @@
 "use client";
 import useSWR from "swr";
 import Form from "./form";
+import DeleteBtn from "./deletebtn";
 
 
 export default function EditPost({params}:{params:{id:number}}) {
@@ -14,6 +15,7 @@ export default function EditPost({params}:{params:{id:number}}) {
             <h2>Edit Post</h2>
             <div className="flex flex-col gap-10">
             <Form post={data.data}/>
+            <DeleteBtn post={data.data}/>
             </div>
         </div>
     )
