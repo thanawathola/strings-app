@@ -1,0 +1,8 @@
+{
+    "crons":[
+        {
+            "path":"/api/cron/delete-misinformation-job?cron_api_key=fddd62dbc0e80b467823680a2870f7312b528a02ec07014c8421b60059657ca0",
+            "schedule":"0 0 * * *"
+        }
+    ]
+}
