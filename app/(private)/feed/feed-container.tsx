@@ -13,7 +13,7 @@ function FeedContainer() {
     <div className="my-3">
       {pages}
       <div className="flex justify-center flex-row">
-        <button onClick={() => setCnt(cnt + 1)} className="bg-slate-900 p-2 rounded-lg my-3">Load More </button>
+        <button onClick={() => setCnt(cnt + 1)} className="dark:bg-slate-900 bg-slate-400 p-2 rounded-lg my-3">Load More </button>
       </div>
     </div>
   );

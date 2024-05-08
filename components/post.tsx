@@ -36,13 +36,13 @@ function Post({ post, showEditBtn }: { post: PostI; showEditBtn?: boolean }) {
         <div className="font-bold ">
           <Link href={`/${post.username}`}>{post.username}</Link>
         </div>
-        <div className="text-slate-400">
+        <div className="text-slate-600">
           {createdAt.toLocaleDateString("en-us", options)}
         </div>
         <div>{post.content}</div>
       </div>
       {showEditBtn && (
-        <div className="text-right flex-grow text-green-400">
+        <div className="text-right flex-grow dark:text-green-400 text-green-800">
           <Link href={`/profile/edit-post/${post.id}`}>Edit</Link>
         </div>
       )}
